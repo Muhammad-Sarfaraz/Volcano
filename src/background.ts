@@ -13,8 +13,4 @@ chrome.contextMenus.onClicked.addListener((info: chrome.contextMenus.OnClickData
     // Send a message to the content script
     chrome.tabs.sendMessage(tab.id, { type: "ASK_CHATGPT" });
   }
-
-  
-
-
 });
