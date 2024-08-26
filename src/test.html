@@ -1,0 +1,97 @@
+<head>
+    <style>body {
+        width: 320px;
+        min-height: 100px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: #ffffff;
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .header {
+        height: 40px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f7f9fb;
+        border-bottom: 1px solid #e8eef4;
+      }
+      
+      .closeIcon {
+        width: 16px;
+        height: 16px;
+      }
+      
+      .closeIcon:hover {
+        cursor: pointer;
+      }
+      
+      .closeIcon:hover path {
+        fill: #1991eb;
+      }
+      
+      .loaderWrapper {
+        height: 160px;
+        text-align: center;
+      }
+      
+      .loaderWrapper:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      
+      .loader {
+        display: inline-block;
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+        border: 4px solid #00a1dc;
+        border-top: 4px solid #ebebeb;
+        border-left: 4px solid #ebebeb;
+        vertical-align: middle;
+        -webkit-animation: loading 1.2s infinite linear;
+        animation: loading 1.2s 
+        infinite linear;
+      }
+      
+      @keyframes loading {
+        0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        }
+      }
+      </style>
+</head>
+
+<body>
+    
+    
+<div class="container">
+    <div class="header">
+        <div>Make Something Amazing</div>
+        <div class="closeIcon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M13.1102 3.96732C13.4077 3.66978 13.4077 3.18737 13.1102 2.88982C12.8126 2.59228 12.3302 2.59228 12.0327 2.88982L8 6.9225L3.96732 2.88982C3.66978 2.59228 3.18737 2.59228 2.88983 2.88982C2.59229 3.18737 2.59229 3.66978 2.88983 3.96732L6.92251 8L2.88983 12.0327C2.59229 12.3302 2.59229 12.8126 2.88983 13.1102C3.18737 13.4077 3.66978 13.4077 3.96732 13.1102L8 9.0775L12.0327 13.1102C12.3302 13.4077 12.8126 13.4077 13.1102 13.1102C13.4077 12.8126 13.4077 12.3302 13.1102 12.0327L9.0775 8L13.1102 3.96732Z"
+                    fill="#949FB1"></path>
+            </svg></div>
+    </div>
+    <div class="content">
+        <div>
+            
+        </div>
+    </div>
+</div>
+</body>

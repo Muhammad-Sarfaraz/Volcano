@@ -1,8 +1,9 @@
 import axios from "axios";
 import { googleApi } from "./Api/googleApi";
+import { openaiApi } from "./Api/openaiApi";
+import { GOOGLE_API_KEY } from "./constants";
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-  
   if (msg.type === "ASK_CHATGPT") {
     alert("All Ok!");
   }
@@ -40,15 +41,21 @@ chrome.runtime.onMessage.addListener(
       }
 
       console.log(text);
-      console.log("activeElement",activeElement);
+      console.log("activeElement", activeElement);
 
-      const response = googleApi(text)
-        .then((res) => {
-          if (activeElement && activeElement.tagName.toLowerCase() === 'textarea') {
-            const textareaElement = activeElement as HTMLTextAreaElement;
-            textareaElement.value = res.data.candidates[0].content.parts[0].text;
-          }
-        });
+      const response = googleApi(text, GOOGLE_API_KEY).then((res) => {
+        if (
+          activeElement &&
+          activeElement.tagName.toLowerCase() === "textarea"
+        ) {
+          const textareaElement = activeElement as HTMLTextAreaElement;
+          textareaElement.value = res.data.candidates[0].content.parts[0].text;
+        }
+      });
+
+      // const openAi = openaiApi(text).then((res) => {
+      //   console.log("openaiApi", res);
+      // });
     }
   }
 );
